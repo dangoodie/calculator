@@ -89,9 +89,9 @@ function handleButtons(e) {
   }
 }
 
-function operatorHandler(operator) {
+function operatorHandler(operatorTemp) {
   if (outputValue === "") {
-    operatorValue = operator;
+    operatorValue = operatorTemp;
 
     outputValue = inputValue;
     output.textContent = outputValue;
@@ -101,22 +101,31 @@ function operatorHandler(operator) {
     return;
   }
 
+  if (operatorValue === "=") {
+    operatorValue = operatorTemp;
+    return;
+  }
+
   if (outputValue != "") {
-    switch (operator) {
+    switch (operatorValue) {
       case "+":
-        console.log(operator);
-        break;
       case "-":
-        console.log(operator);
-        break;
       case "×":
-        console.log(operator);
-        break;
       case "÷":
-        console.log(operator);
+        outputValue = operate(operatorValue, outputValue, inputValue);
+        output.textContent = outputValue;
+        inputValue = "0";
+        input.textContent = inputValue;
+
+        operatorValue = operatorTemp;
         break;
       case "=":
-        console.log(operator);
+        outputValue = operate(operatorValue, outputValue, inputValue);
+        output.textContent = outputValue;
+        inputValue = "0";
+        input.textContent = inputValue;
+
+        operatorValue = "";
         break;
       default:
         break;
@@ -132,17 +141,25 @@ function operate(operator, num1, num2) {
 }
 
 function add(a, b) {
+  a = parseFloat(a);
+  b = parseFloat(b);
   return a + b;
 }
 
 function subtract(a, b) {
+  a = parseFloat(a);
+  b = parseFloat(b);
   return a - b;
 }
 
 function multiply(a, b) {
+  a = parseFloat(a);
+  b = parseFloat(b);
   return a * b;
 }
 
 function divide(a, b) {
+  a = parseFloat(a);
+  b = parseFloat(b);
   return a / b;
 }
