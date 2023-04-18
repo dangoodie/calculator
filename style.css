@@ -27,6 +27,7 @@ body {
   border: 1px solid black;
   border-radius: 8px;
   gap: 10px;
+  margin-top: auto;
 }
 
 .row {
@@ -98,4 +99,9 @@ body {
 
 .delete:active {
   background-color: rgba(0, 0, 255, 0.7);
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
 }

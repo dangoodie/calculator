@@ -1,3 +1,7 @@
+const footer = document.querySelector("footer");
+const year = new Date().getFullYear()
+footer.textContent = `\u00A9 Daniel Gooden ${year}`;
+
 function operate(operator, num1, num2) {
   if (operator === "+") return add(num1, num2);
   if (operator === "-") return subtract(num1, num2);
@@ -20,3 +24,4 @@ function multiply(a, b) {
 function divide(a, b) {
   return a / b;
 }
+
