@@ -24,7 +24,7 @@ body {
   padding: 50px;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 8px;
   gap: 10px;
 }
@@ -49,7 +49,7 @@ body {
   gap: 0px;
   border: 1px solid black;
   color: #000;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18); */
 }
 
 .input {
@@ -63,7 +63,7 @@ body {
   font-size: larger;
   color: #000;
   border-radius: 8px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18); */
   border: 1px solid black;
 
 }
