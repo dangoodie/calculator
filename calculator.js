@@ -4,6 +4,8 @@ footer.innerHTML += `${year}`;
 
 let outputValue = "";
 let inputValue = "0";
+let tempNum;
+let operatorValue = "";
 
 const input = document.querySelector(".input");
 const output = document.querySelector(".output");
@@ -43,71 +45,82 @@ function handleButtons(e) {
   const button = e.target.textContent;
   switch (button) {
     case "0":
-      inputHandler(button);
-      break;
     case "1":
-      inputHandler(button);
-      break;
     case "2":
-      inputHandler(button);
-      break;
     case "3":
-      inputHandler(button);
-      break;
     case "4":
-      inputHandler(button);
-      break;
     case "5":
-      inputHandler(button);
-      break;
     case "6":
-      inputHandler(button);
-      break;
     case "7":
-      inputHandler(button);
-      break;
     case "8":
-      inputHandler(button);
-      break;
     case "9":
-      inputHandler(button);
-      break;
     case ".":
       inputHandler(button);
       break;
     case "Clear":
       inputValue = "0";
       input.textContent = inputValue;
+      outputValue = "";
+      output.textContent = outputValue;
+
+      num1 = undefined;
+      num2 = undefined;
+      operator = undefined;
       break;
     case "Delete":
-      if (inputValue !== "0") {
-        inputValue = inputValue.slice(0, -1);
-        input.textContent = inputValue;
-      }
+      inputValue = inputValue.slice(0, -1);
+      input.textContent = inputValue;
+      // reset to "0" whenever string length is 0
       if (inputValue.length === 0) {
-        inputValue = "0"
+        inputValue = "0";
         input.textContent = inputValue;
       }
       break;
     case "+":
-      console.log(button);
-      break;
     case "-":
-      console.log(button);
-      break;
     case "×":
-      console.log(button);
-      break;
     case "÷":
-      console.log(button);
-      break;
     case "=":
-      console.log(button);
+      operatorHandler(button);
       break;
-
     default:
       console.error("INPUT DOES NOT EXIST");
       break;
+  }
+}
+
+function operatorHandler(operator) {
+  if (outputValue === "") {
+    operatorValue = operator;
+
+    outputValue = inputValue;
+    output.textContent = outputValue;
+
+    inputValue = "0";
+    input.textContent = inputValue;
+    return;
+  }
+
+  if (outputValue != "") {
+    switch (operator) {
+      case "+":
+        console.log(operator);
+        break;
+      case "-":
+        console.log(operator);
+        break;
+      case "×":
+        console.log(operator);
+        break;
+      case "÷":
+        console.log(operator);
+        break;
+      case "=":
+        console.log(operator);
+        break;
+      default:
+        break;
+    }
   }
 }
 
