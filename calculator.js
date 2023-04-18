@@ -16,15 +16,29 @@ buttons.forEach((button) => {
   button.addEventListener("mousedown", handleButtons);
 });
 
+// logic for handling numerical inputs
 function inputHandler(button) {
+  if (inputValue.includes(".") && button === ".") {
+    return;
+  }
+  if (inputValue === "0" && button === "0") {
+    return;
+  }
+  if (inputValue === "0" && button === ".") {
+    inputValue += button;
+    input.textContent = inputValue;
+    return;
+  }
   if (inputValue === "0" && button !== "0") {
     inputValue = button;
-    input.textContent = button;
-  } else {
-    input.textContent += button;
+    input.textContent = inputValue;
+    return;
   }
+  inputValue += button;
+  input.textContent = inputValue;
 }
 
+// switch statement to handle all buttons
 function handleButtons(e) {
   const button = e.target.textContent;
   switch (button) {
@@ -35,31 +49,34 @@ function handleButtons(e) {
       inputHandler(button);
       break;
     case "2":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "3":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "4":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "5":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "6":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "7":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "8":
-      input.textContent += button;
+      inputHandler(button);
       break;
     case "9":
-      input.textContent += button;
+      inputHandler(button);
+      break;
+    case ".":
+      inputHandler(button);
       break;
     case "Clear":
-      inputValue = "0"
+      inputValue = "0";
       input.textContent = inputValue;
       break;
     case "Delete":
@@ -77,14 +94,12 @@ function handleButtons(e) {
     case "÷":
       console.log(button);
       break;
-    case ".":
-      console.log(button);
-      break;
     case "=":
       console.log(button);
       break;
 
     default:
+      console.error("INPUT DOES NOT EXIST");
       break;
   }
 }
