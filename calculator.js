@@ -2,7 +2,7 @@ const footer = document.querySelector("footer");
 const year = new Date().getFullYear();
 footer.innerHTML += `${year}`;
 
-let outputValue = "0";
+let outputValue = "";
 let inputValue = "0";
 
 const input = document.querySelector(".input");
@@ -16,46 +16,53 @@ buttons.forEach((button) => {
   button.addEventListener("mousedown", handleButtons);
 });
 
+function inputHandler(button) {
+  if (inputValue === "0" && button !== "0") {
+    inputValue = button;
+    input.textContent = button;
+  } else {
+    input.textContent += button;
+  }
+}
+
 function handleButtons(e) {
-  const button = e.target.innerHTML;
+  const button = e.target.textContent;
   switch (button) {
     case "0":
-      console.log(button);
+      inputHandler(button);
       break;
     case "1":
-      console.log(button);
+      inputHandler(button);
       break;
     case "2":
-      console.log(button);
+      input.textContent += button;
       break;
     case "3":
-      console.log(button);
+      input.textContent += button;
       break;
     case "4":
-      console.log(button);
+      input.textContent += button;
       break;
     case "5":
-      console.log(button);
+      input.textContent += button;
       break;
     case "6":
-      console.log(button);
+      input.textContent += button;
       break;
     case "7":
-      console.log(button);
+      input.textContent += button;
       break;
     case "8":
-      console.log(button);
+      input.textContent += button;
       break;
     case "9":
-      console.log(button);
+      input.textContent += button;
       break;
     case "Clear":
-      console.log(button);
+      inputValue = "0"
+      input.textContent = inputValue;
       break;
     case "Delete":
-      console.log(button);
-      break;
-    case "0":
       console.log(button);
       break;
     case "+":
