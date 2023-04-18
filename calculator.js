@@ -80,7 +80,14 @@ function handleButtons(e) {
       input.textContent = inputValue;
       break;
     case "Delete":
-      console.log(button);
+      if (inputValue !== "0") {
+        inputValue = inputValue.slice(0, -1);
+        input.textContent = inputValue;
+      }
+      if (inputValue.length === 0) {
+        inputValue = "0"
+        input.textContent = inputValue;
+      }
       break;
     case "+":
       console.log(button);
