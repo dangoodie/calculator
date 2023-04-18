@@ -58,14 +58,13 @@ function handleButtons(e) {
       inputHandler(button);
       break;
     case "Clear":
+      // clear out the variables
       inputValue = "0";
       input.textContent = inputValue;
       outputValue = "";
       output.textContent = outputValue;
-
-      num1 = undefined;
-      num2 = undefined;
-      operator = undefined;
+      operatorValue = "";
+      
       break;
     case "Delete":
       inputValue = inputValue.slice(0, -1);
