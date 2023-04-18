@@ -2,6 +2,7 @@
 
 * {
   font-family: "Roboto";
+  box-sizing: border-box;
 }
 
 body {
@@ -15,11 +16,23 @@ body {
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  
 }
 
 .calc-container {
   background-color: lightgray;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
 }
 
 .output,
@@ -27,6 +40,16 @@ body {
   text-align: end;
   background-color: white;
   padding: 10px;
+  flex: auto;
+}
+
+.calc-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  border: 1px solid black;
+  color: #000;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
 .input {
@@ -34,5 +57,45 @@ body {
 }
 
 .calc-button {
-  padding: 15px;
+  width: 70px;
+  height: 50px;
+  flex: 1;
+  font-size: larger;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  border: 1px solid black;
+
+}
+
+.calc-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.calc-button:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.clear {
+  background-color: rgba(255, 0, 0, .3);
+}
+
+.clear:hover {
+  background-color: rgba(255, 0, 0, .5);
+}
+
+.clear:active {
+  background-color: rgba(255, 0, 0, .7);
+}
+
+.delete {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
+.delete:hover {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.delete:active {
+  background-color: rgba(0, 0, 255, 0.7);
 }
